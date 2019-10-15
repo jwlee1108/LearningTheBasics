@@ -1,5 +1,11 @@
-import sum from '../src/index';
+import mail from '../src/index';
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
+test('maxSumArray', () => {
+  expect(mail.maxSumArray([-5, -3, -1])).toBe(-1);
+  expect(mail.maxSumArray([-1, 3, -1, 5])).toBe(7);
+  expect(mail.maxSumArray([2, 4, -2, -3, 8])).toBe(9);
+});
+
+test('fibonacci', () => {
+  expect(mail.fibonacci(12)).toBe(10);
 });
