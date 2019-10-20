@@ -1,3 +1,3 @@
-import * as mail from './mailprogramming';
+import * as mail from './mail-programming';
 
 export default mail;
