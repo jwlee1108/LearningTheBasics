@@ -9,3 +9,9 @@ test('maxSumArray', () => {
 test('fibonacci', () => {
   expect(mail.fibonacci(12)).toBe(10);
 });
+
+test('parentheses', () => {
+  expect(mail.parentheses(1)).toBe(1);
+  expect(mail.parentheses(2)).toBe(2);
+  expect(mail.parentheses(3)).toBe(5);
+});
