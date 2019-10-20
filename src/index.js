@@ -1,3 +1,11 @@
-import * as mail from './mail-programming';
+import { maxSumArray, fibonacci, parentheses } from './mail-programming';
+import Stack from './data-structure/stack/stack';
 
-export default mail;
+const modules = {
+  maxSumArray,
+  fibonacci,
+  parentheses,
+  Stack,
+};
+
+export default modules;
