@@ -3,23 +3,16 @@ export default function lengthOfLongestSubstring(s) {
 
   let start = 0;
   let maxLen = 0;
-  let subLen = 0;
 
   s.split('').forEach((c, index) => {
     const repeatIndex = map.get(c);
 
-    if (repeatIndex === undefined) {
-      map.set(c, index);
-      subLen = index - start + 1;
-    } else {
-      subLen = index - start;
-      start = repeatIndex + 1;
-      map.delete(c);
-      map.set(c, index);
-
-      maxLen = Math.max(maxLen, subLen);
+    if (repeatIndex !== undefined) {
+      start = Math.max(map.get(c), start);
     }
+    maxLen = Math.max(maxLen, index - start + 1);
+    map.set(c, index + 1);
   });
 
-  return Math.max(maxLen, subLen);
+  return maxLen;
 }
