@@ -6,6 +6,7 @@ import targetSum from './191023-target-sum';
 import intersectingInterval from './191028-intersecting-interval';
 import reverseString from './191030-reverse-string';
 import secondLargestElement from './191103-second-largest';
+import moveZeroes from './191106-move-zeroes';
 
 export {
   maxSumArray,
@@ -16,4 +17,5 @@ export {
   intersectingInterval,
   reverseString,
   secondLargestElement,
+  moveZeroes,
 };
