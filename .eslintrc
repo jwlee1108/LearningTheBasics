@@ -16,7 +16,9 @@
     }],
     "indent": "off",
     "no-underscore-dangle": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "no-continue": "off",
+    "no-param-reassign": "off"
   },
   "overrides": [
     {
