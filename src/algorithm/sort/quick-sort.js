@@ -1,35 +1,41 @@
-function divide(array, left, right, pivot) {
+import Swap from '../util/swap';
+
+const partition = (array, left, right) => {
+  const pivot = array[Math.floor((left + right) / 2)];
+
   while (left <= right) {
-    while (array[left] < pivot) {
+    if (pivot > array[left]) {
       left++;
     }
 
-    while (array[right] > pivot) {
+    if (pivot < array[right]) {
       right--;
     }
 
     if (left <= right) {
-      [array[left], array[right]] = [array[right], array[left]];
+      Swap(array, left, right);
       left++;
       right--;
     }
   }
 
   return left;
-}
+};
 
-function quickSort(array, left = 0, right = array.length - 1) {
-  if (left >= right) {
-    return;
+const quickSort = (array, left = 0, right = array.length - 1) => {
+  if (array.length > 1) {
+    const index = partition(array, left, right);
+
+    if (left < index - 1) {
+      quickSort(array, left, index - 1);
+    }
+
+    if (index < right) {
+      quickSort(array, index, right);
+    }
   }
-  const mid = Math.floor((left + right) / 2);
-  const pivot = array[mid];
-  const partition = divide(array, left, right, pivot);
-  quickSort(array, left, partition - 1);
-  quickSort(array, partition, right);
 
   return array;
-}
+};
 
-
-quickSort([1, 12, 5, 26, 7, 14, 3, 7, 2]);
+export default quickSort;
