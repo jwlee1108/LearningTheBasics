@@ -1,25 +1,18 @@
 import Swap from '../util/swap';
 
 const partition = (array, left, right) => {
-  const pivot = array[Math.floor((left + right) / 2)];
+  const pivot = array[right];
+  let elm = left;
 
-  while (left <= right) {
-    while (array[left] < pivot) {
-      left++;
-    }
-
-    while (array[right] > pivot) {
-      right--;
-    }
-
-    if (left <= right) {
-      Swap(array, left, right);
-      left++;
-      right--;
+  for (let i = left; i <= right; i++) {
+    if (array[i] < pivot) {
+      Swap(array, i, elm);
+      elm++;
     }
   }
 
-  return left;
+  Swap(array, elm, right);
+  return elm;
 }
 
 const kthSearch = (array, left = 0, right = array.length - 1, k) => {
